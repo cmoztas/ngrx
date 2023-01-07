@@ -7,7 +7,6 @@ import { HomeComponent } from './home/home.component';
 import {AppRoutingModule} from './app-routing.module';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import {appReducer} from './store/app.state';
 
 @NgModule({
   declarations: [
@@ -18,7 +17,7 @@ import {appReducer} from './store/app.state';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot(appReducer),
+    StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({
       logOnly: !isDevMode()
     })
