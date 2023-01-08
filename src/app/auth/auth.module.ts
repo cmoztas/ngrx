@@ -6,6 +6,8 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {StoreModule} from '@ngrx/store';
 import {AUTH_STATE_NAME} from './state/auth.selectors';
 import {authReducer} from './state/auth.reducer';
+import {EffectsModule} from '@ngrx/effects';
+import {AuthEffects} from './state/auth.effects';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,8 @@ import {authReducer} from './state/auth.reducer';
     CommonModule,
     AuthRoutingModule,
     ReactiveFormsModule,
-    StoreModule.forFeature(AUTH_STATE_NAME, authReducer)
+    StoreModule.forFeature(AUTH_STATE_NAME, authReducer),
+    EffectsModule.forFeature([AuthEffects])
   ]
 })
 export class AuthModule{}

@@ -5,5 +5,5 @@ export const LOGIN_SUCCESS = '[auth page] login success';
 export const LOGIN_FAIL = '[auth page] login fail';
 
 
-export const loginStart = createAction(LOGIN_START, props<{email: string, password: string}>);
+export const loginStart = createAction(LOGIN_START, props<{email: string, password: string}>());
 export const loginSuccess = createAction(LOGIN_SUCCESS);
