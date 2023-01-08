@@ -23,4 +23,17 @@ export class AuthService {
     const expirationDate = new Date(new Date().getTime() + +data.expiresIn * 1000);
     return new User(data.email, data.idToken, data.localId, expirationDate);
   }
+
+  getErrorMessage(message: string) {
+    switch (message) {
+      case 'EMAIL_NOT_FOUND':
+        return 'Email not found.';
+      case 'INVALID_PASSWORD':
+        return 'Invalid password.';
+      case 'USER_DISABLED':
+        return 'This user is banned from system.';
+      default:
+        return 'Unknown error occured. Please try again.';
+    }
+  }
 }
